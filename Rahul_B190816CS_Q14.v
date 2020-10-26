@@ -1,0 +1,21 @@
+module mux16_2_1(z,s0,s1,s2,s3,d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15);
+input d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15;
+output z;
+input s0,s1,s2,s3;
+wire w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14;
+mux mux_1(w1,s0,d0,d1);
+mux mux_2(w2,s0,d2,d3);
+mux mux_3(w3,s0,d4,d5);
+mux mux_4(w4,s0,d6,d7);
+mux mux_5(w5,s0,d8,d9);
+mux mux_6(w6,s0,d10,d11);
+mux mux_7(w7,s0,d12,d13);
+mux mux_8(w8,s0,d14,d15);
+mux mux_9(w9,s1,w1,w2);
+mux mux_10(w10,s1,w3,w4);
+mux mux_11(w11,s1,w5,w6);
+mux mux_12(w12,s1,w7,w8);
+mux mux_13(w13,s2,w9,w10);
+mux mux_14(w14,s2,w11,w12);
+mux mux_15(z,s3,w13,w14);
+endmodule
